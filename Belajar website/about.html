@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1c1c1c 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 1.5rem 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(13, 13, 13);
+    font-size: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    padding: .5rem 0;
+    display: flex;
+    justify-content: center;
+    opacity: .7;
+    letter-spacing: 2px;
+}
+
+nav ul li a::before {
+    content: '';
+    width: 0;
+    position: absolute;
+    height: 2px;
+    background-color: rgb(245, 245, 245);
+    bottom: 0;
+    transition: all 500ms;
+
+}
+
+nav ul li a.active::before {
+    width: 50%;
+}
+
+nav ul li a.active {
+    opacity: 1;
+}
+
+nav ul li a:hover::before {
+    width: 50%;
+}
+
+h3 {
+    color: black;
+    border: none;
+    font-size:larger;
+
+}
+        
+        .profile-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .profile-image {
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<nav>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/klik.html">Menu</a></li>
+      <li><a href="/price.html">Prince</a></li>
+      <li><a  class="active" href="#">About us</a></li>
+    </ul>
+  </nav>
+<body class="text-gray-100">
+    <div class="profile-card rounded-2xl p-8 max-w-md w-full shadow-2xl">
+        <!-- Profile Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Bonaventura Juliano Soande (Juan)</h1>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="flex justify-center mb-6">
+            <div class="profile-image w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-lg">
+                <img 
+                    src="/juan foto.jpg" 
+                    class="w-full h-full object-cover"
+                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDI1NiAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiBmaWxsPSIjMzMzIi8+CjxjaXJjbGUgY3g9IjEyOCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9IiM2NjYiLz4KPHJlY3QgeD0iODgiIHk9IjE0MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjNjY2Ii8+Cjwvc3ZnPg=='"
+                >
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="mb-6 text-center">
+            <h2 class="text-xl font-semibold mb-3 text-white">Tentang Saya</h2>
+            <p class="text-blue-100 leading-relaxed">
+                Saya Seorang Pelajar di SMK 3<br>Palu. dan saya Mempunyai<br>Produk Jualan<br>Pisang Gembul
+            </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold mb-3 text-white text-center">Keahlian</h2>
+            <div class="flex flex-wrap justify-center gap-2">
+                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">CSS</span>
+                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">HTML</span>
+            </div>
+        </div> <hr>
+
+        <!-- Contact -->
+        <div class="text-center">
+            <h2 class="text-xl font-semibold mb-3 text-white">Hubungi Saya</h2>
+            <h3>085242324599</h3>
+        </div> <hr>
+        <h4>Kirim Pesan</h4>
+        <!DOCTYPE html>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: #1c1c1c;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: black;
+            color: #1c1c1c;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="chatForm">
+        <label for="messageInput">Ketik Pesan:</label>
+        <input type="text" id="messageInput" name="message" placeholder="Tulis pesan Anda..." required />
+        <input type="text" id="messageInput" name="message" placeholder="Berapa Pesanan..." required />
+        <button type="submit">Kirim</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('chatForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const input = document.getElementById('messageInput');
+            alert('Pesan terkirim: ' + input.value);
+            input.value = '';
+            input.focus();
+        });
+    </script>
+</body>
+</html>
+
+        <!-- Quote -->
+        <div class="mt-6 text-center">
+            <p class="text-blue-100 italic text-sm">
+                "Sorry, kalau produk yang saya<br> jual kurang memuaskan. TERIMAKASIH"
+            </p>
+        </div>
+    </div>
+    <script>
+        // Simple animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const card = document.querySelector('.profile-card');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

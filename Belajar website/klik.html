@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .slider-container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .slide-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .slide-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .slider-info {
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        .slider-title {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .slider-subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .slider {
+                height: 350px;
+            }
+            
+            .slide-title {
+                font-size: 1.4rem;
+            }
+            
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider {
+                height: 280px;
+            }
+            
+            .slide-content {
+                padding: 20px;
+            }
+            
+            .slide-title {
+                font-size: 1.2rem;
+            }
+            
+            .slide-description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-info">
+            <h1 class="slider-title">Pisang Gembul</h1>
+            <p class="slider-subtitle"><strong>Macam-macam rasa Pisang Gembul</strong></p>
+        </div>
+        
+        <div class="slider">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <img src="/gambar pisang/Rasa coklat.jpg" alt="" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'">
+                <div class="slide-content">
+                    <h2 class="slide-title">Rasa Coklat</h2>
+                    <p class="slide-description">Enak</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="/gambar pisang/Rasa keju.jpg" alt="" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'">
+                <div class="slide-content">
+                    <h2 class="slide-title">Rasa keju</h2>
+                    <p class="slide-description">Enakkk</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="/gambar pisang/Rasa coklat keju.jpg" alt="" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #0ba360 0%, #3cba92 100%)'">
+                <div class="slide-content">
+                    <h2 class="slide-title">Rasa Coklatkeju</h2>
+                    <p class="slide-description">Enakkk Sekaliii</p>
+                </div>
+            </div>
+            
+        
+        <div class="navigation">
+            <button class="nav-btn prev-btn">❮</button>
+            <button class="nav-btn next-btn">❯</button>
+        </div>
+        
+        <div class="dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+
+        </div>
+    </div>
+
+    <script>
+        class ImageSlider {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.dots = document.querySelectorAll('.dot');
+                this.prevBtn = document.querySelector('.prev-btn');
+                this.nextBtn = document.querySelector('.next-btn');
+                this.currentSlide = 0;
+                this.autoSlideInterval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                // Event listeners untuk navigasi
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Event listeners untuk dots
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prevSlide();
+                    if (e.key === 'ArrowRight') this.nextSlide();
+                });
+                
+                // Auto slide
+                this.startAutoSlide();
+                
+                // Pause auto slide on hover
+                const slider = document.querySelector('.slider');
+                slider.addEventListener('mouseenter', () => this.stopAutoSlide());
+                slider.addEventListener('mouseleave', () => this.startAutoSlide());
+            }
+            
+            showSlide(index) {
+                // Hide all slides
+                this.slides.forEach(slide => slide.classList.remove('active'));
+                this.dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Show current slide
+                this.slides[index].classList.add('active');
+                this.dots[index].classList.add('active');
+                
+                this.currentSlide = index;
+            }
+            
+            nextSlide() {
+                let nextIndex = this.currentSlide + 1;
+                if (nextIndex >= this.slides.length) {
+                    nextIndex = 0;
+                }
+                this.showSlide(nextIndex);
+            }
+            
+            prevSlide() {
+                let prevIndex = this.currentSlide - 1;
+                if (prevIndex < 0) {
+                    prevIndex = this.slides.length - 1;
+                }
+                this.showSlide(prevIndex);
+            }
+            
+            goToSlide(index) {
+                this.showSlide(index);
+            }
+            
+            startAutoSlide() {
+                this.stopAutoSlide();
+                this.autoSlideInterval = setInterval(() => {
+                    this.nextSlide();
+                }, 4000); // Ganti slide setiap 4 detik
+            }
+            
+            stopAutoSlide() {
+                if (this.autoSlideInterval) {
+                    clearInterval(this.autoSlideInterval);
+                    this.autoSlideInterval = null;
+                }
+            }
+        }
+        
+        // Initialize slider ketika DOM siap
+        document.addEventListener('DOMContentLoaded', () => {
+            new ImageSlider();
+        });
+        
+        // Fallback untuk gambar yang gagal load
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
